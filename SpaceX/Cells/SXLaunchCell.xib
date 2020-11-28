@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SXLaunchCell" rowHeight="253" id="KGk-i7-Jjw" customClass="SXLaunchCell" customModule="SpaceX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="366" height="253"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="366" height="253"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test-luanch-image" translatesAutoresizingMaskIntoConstraints="NO" id="Ryi-b4-GZ7">
+                        <rect key="frame" x="3" y="3" width="360" height="185"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Ryi-b4-GZ7" secondAttribute="height" multiplier="364:187" id="cbu-mV-sct"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Eh2-fW-8hz">
+                        <rect key="frame" x="8" y="198" width="350" height="45"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Es'hail 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hky-lu-bws">
+                                <rect key="frame" x="0.0" y="12" width="192.5" height="20.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.32497802380000002" green="0.80041521790000003" blue="0.84800440070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="November 15, 2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mJ-qL-r6B">
+                                <rect key="frame" x="202.5" y="7.5" width="147.5" height="30"/>
+                                <color key="backgroundColor" red="0.66274509803921566" green="0.66666666666666663" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wNU-A1-hsF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97647058823529409" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKB-Y2-DuR">
+                        <rect key="frame" x="286" y="26" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="GP9-ge-HDK"/>
+                            <constraint firstAttribute="width" constant="40" id="hTX-Q1-QQm"/>
+                        </constraints>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal">
+                            <imageReference key="image" image="star" catalog="system" symbolScale="large"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
+                        </state>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" red="0.1125398204" green="0.1441963315" blue="0.194050312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Ryi-b4-GZ7" secondAttribute="trailing" constant="3" id="EkO-2X-yWX"/>
+                    <constraint firstItem="Eh2-fW-8hz" firstAttribute="top" secondItem="Ryi-b4-GZ7" secondAttribute="bottom" constant="10" id="OIc-ZX-IYA"/>
+                    <constraint firstItem="Eh2-fW-8hz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Vl8-ZJ-pSR"/>
+                    <constraint firstAttribute="trailing" secondItem="PKB-Y2-DuR" secondAttribute="trailing" constant="40" id="e95-32-dUA"/>
+                    <constraint firstItem="PKB-Y2-DuR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="hwO-md-YAb"/>
+                    <constraint firstItem="Ryi-b4-GZ7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="knf-sB-XQ0"/>
+                    <constraint firstItem="Ryi-b4-GZ7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="m8G-ah-FHT"/>
+                    <constraint firstAttribute="trailing" secondItem="Eh2-fW-8hz" secondAttribute="trailing" constant="8" id="piP-nS-9JJ"/>
+                    <constraint firstAttribute="bottom" secondItem="Eh2-fW-8hz" secondAttribute="bottom" constant="10" id="rm6-Vw-zyN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+            <connections>
+                <outlet property="favoriteButton" destination="PKB-Y2-DuR" id="GUy-Cv-spN"/>
+                <outlet property="launchDate" destination="1mJ-qL-r6B" id="OPy-iU-8Od"/>
+                <outlet property="launchImage" destination="Ryi-b4-GZ7" id="igF-pN-Efn"/>
+                <outlet property="launchTitle" destination="hky-lu-bws" id="s1K-1E-07B"/>
+            </connections>
+            <point key="canvasLocation" x="113.04347826086958" y="186.49553571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="test-luanch-image" width="1500" height="1000"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
