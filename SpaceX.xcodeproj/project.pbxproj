@@ -14,6 +14,7 @@
 		7320CBC125743CE60091B391 /* SXLaunchesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320CBBB25743CE60091B391 /* SXLaunchesEndpoint.swift */; };
 		7320CBC225743CE60091B391 /* SXError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320CBBC25743CE60091B391 /* SXError.swift */; };
 		7320CBD925743E650091B391 /* SXAppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320CBD825743E650091B391 /* SXAppContext.swift */; };
+		7320CBE7257465530091B391 /* SXMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320CBE6257465530091B391 /* SXMock.swift */; };
 		73CF0EF025727E2200EB7386 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0EEF25727E2200EB7386 /* AppDelegate.swift */; };
 		73CF0EF225727E2200EB7386 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0EF125727E2200EB7386 /* SceneDelegate.swift */; };
 		73CF0EF425727E2200EB7386 /* SXLaunchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0EF325727E2200EB7386 /* SXLaunchListViewController.swift */; };
@@ -68,6 +69,7 @@
 		7320CBBB25743CE60091B391 /* SXLaunchesEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXLaunchesEndpoint.swift; sourceTree = "<group>"; };
 		7320CBBC25743CE60091B391 /* SXError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXError.swift; sourceTree = "<group>"; };
 		7320CBD825743E650091B391 /* SXAppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXAppContext.swift; sourceTree = "<group>"; };
+		7320CBE6257465530091B391 /* SXMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXMock.swift; sourceTree = "<group>"; };
 		73CF0EEC25727E2200EB7386 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CF0EEF25727E2200EB7386 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73CF0EF125727E2200EB7386 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				73CF0FB32573B20D00EB7386 /* SXHelpers.swift */,
 				73CF0FF12573F16300EB7386 /* SXStoryboardInstantiatable.swift */,
 				7320CBD825743E650091B391 /* SXAppContext.swift */,
+				7320CBE6257465530091B391 /* SXMock.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				73CF0F772572AE7B00EB7386 /* SXLaunchDetailsViewController.swift in Sources */,
 				73CF0EF025727E2200EB7386 /* AppDelegate.swift in Sources */,
 				73CF0EF225727E2200EB7386 /* SceneDelegate.swift in Sources */,
+				7320CBE7257465530091B391 /* SXMock.swift in Sources */,
 				7320CBC025743CE60091B391 /* SXAPIClient.swift in Sources */,
 				73CF0FED2573C6B100EB7386 /* UIColor+Extensions.swift in Sources */,
 				73CF0FE82573C14900EB7386 /* Date+Formatter.swift in Sources */,

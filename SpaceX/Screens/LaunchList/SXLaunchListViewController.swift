@@ -100,15 +100,24 @@ class SXLaunchListViewController: UIViewController {
     viewModel.$pastLaunchesList
       .dropFirst()
       .receive(on: DispatchQueue.main)
-      .sink { [weak self] items in
+      .sink(receiveValue: { [weak self] items in
         
         print("new items.count: \(items.count)")
         
         guard let self = self else { return }
-        mainAsync {
-          self.refreshControl.endRefreshing()
-          self.reloadDataSources(with: items)
-        }
+        mainAsync { self.reloadDataSources(with: items) }
+        
+      }).store(in: &cancellables)
+    
+    
+    viewModel.$errorPublisher
+      .dropFirst()
+      .receive(on: DispatchQueue.main)
+      .sink { [weak self] messageText in
+        
+        guard let self = self, let _messageText = messageText else { return }
+        self.refreshControl.endRefreshing()
+        showMessage(message: _messageText, from: self)
         
       }.store(in: &cancellables)
   }
