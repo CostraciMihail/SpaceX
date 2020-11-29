@@ -53,7 +53,7 @@ class SXLaunchCell: UITableViewCell {
   
   func laodImage() {
     
-    let imageUrl = URL(string: launchItem?.imageUrl ?? "empty_url")
+    let imageUrl = URL(string: launchItem?.links?.flickr?.original?.first ?? "empty_url")
     let imageProcessor = DownsamplingImageProcessor(size: launchImage.bounds.size)
                  |> RoundCornerImageProcessor(cornerRadius: 15)
     

@@ -51,7 +51,7 @@ class SXLaunchDetailsViewController: UIViewController {
     dateLabel.text = viewModel.launchItem.dateString
     descriptionLabel.text = viewModel.launchItem.details
     nameLabel.text = "Rocket name: \(viewModel.launchItem.name)"
-    payloadLabel.text = "Payload mass: \(viewModel.launchItem.payloadMass ?? "*")"
+    payloadLabel.text = "Payload mass: \(viewModel.launchItem.payloadMass?.first ?? "*")"
   }
   
   func adjustYoutubePlayerHeight() {
@@ -75,7 +75,7 @@ class SXLaunchDetailsViewController: UIViewController {
     
     mainAsync(after: 0.05) { [weak self] in
       guard let self = self else { return }
-      self.youtubeVideoPlayer.load(withVideoId: self.viewModel.launchItem.youtubeID ?? "empty_id")
+      self.youtubeVideoPlayer.load(withVideoId: self.viewModel.launchItem.links?.youtubeID ?? "empty_id")
     }
   }
   
@@ -86,7 +86,7 @@ class SXLaunchDetailsViewController: UIViewController {
   
   func openWikipediaURL() {
     
-    let url = URL(string: viewModel.launchItem.wikipedia ?? "empty_url")!
+    let url = URL(string: viewModel.launchItem.links?.wikipedia ?? "empty_url")!
     guard UIApplication.shared.canOpenURL(url) else { return }
     
     UIApplication.shared.open(url)
