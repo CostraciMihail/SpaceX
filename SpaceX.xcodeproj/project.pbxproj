@@ -19,6 +19,10 @@
 		73CF0F7F2572B49100EB7386 /* SXLaunchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0F7E2572B49100EB7386 /* SXLaunchListViewModel.swift */; };
 		73CF0F842572B49F00EB7386 /* SXLaunchDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0F832572B49F00EB7386 /* SXLaunchDetailsViewModel.swift */; };
 		73CF0F8C2572B76B00EB7386 /* SXLaunchListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0F8B2572B76B00EB7386 /* SXLaunchListRouter.swift */; };
+		73CF0FA42572C21400EB7386 /* SXLaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0FA22572C21400EB7386 /* SXLaunchCell.swift */; };
+		73CF0FA52572C21400EB7386 /* SXLaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CF0FA32572C21400EB7386 /* SXLaunchCell.xib */; };
+		73CF0FAC2572C24C00EB7386 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0FAB2572C24C00EB7386 /* UITableViewCell+Extension.swift */; };
+		73CF0FB42573B20D00EB7386 /* SXHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0FB32573B20D00EB7386 /* SXHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		73CF0F7E2572B49100EB7386 /* SXLaunchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXLaunchListViewModel.swift; sourceTree = "<group>"; };
 		73CF0F832572B49F00EB7386 /* SXLaunchDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXLaunchDetailsViewModel.swift; sourceTree = "<group>"; };
 		73CF0F8B2572B76B00EB7386 /* SXLaunchListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXLaunchListRouter.swift; sourceTree = "<group>"; };
+		73CF0FA22572C21400EB7386 /* SXLaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXLaunchCell.swift; sourceTree = "<group>"; };
+		73CF0FA32572C21400EB7386 /* SXLaunchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXLaunchCell.xib; sourceTree = "<group>"; };
+		73CF0FAB2572C24C00EB7386 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		73CF0FB32573B20D00EB7386 /* SXHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +116,16 @@
 		73CF0EEE25727E2200EB7386 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				73CF0FAA2572C24100EB7386 /* Extensions */,
 				73CF0EEF25727E2200EB7386 /* AppDelegate.swift */,
 				73CF0EF125727E2200EB7386 /* SceneDelegate.swift */,
 				73CF0F882572B6BB00EB7386 /* Screens */,
+				73CF0FA92572C21700EB7386 /* Cells */,
 				73CF0EF525727E2200EB7386 /* Main.storyboard */,
 				73CF0EF825727E2300EB7386 /* Assets.xcassets */,
 				73CF0EFA25727E2300EB7386 /* LaunchScreen.storyboard */,
 				73CF0EFD25727E2300EB7386 /* Info.plist */,
+				73CF0FB32573B20D00EB7386 /* SXHelpers.swift */,
 			);
 			path = SpaceX;
 			sourceTree = "<group>";
@@ -163,6 +174,23 @@
 				73CF0F832572B49F00EB7386 /* SXLaunchDetailsViewModel.swift */,
 			);
 			path = LaunchDetails;
+			sourceTree = "<group>";
+		};
+		73CF0FA92572C21700EB7386 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				73CF0FA22572C21400EB7386 /* SXLaunchCell.swift */,
+				73CF0FA32572C21400EB7386 /* SXLaunchCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		73CF0FAA2572C24100EB7386 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				73CF0FAB2572C24C00EB7386 /* UITableViewCell+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +301,7 @@
 				73CF0EFC25727E2300EB7386 /* LaunchScreen.storyboard in Resources */,
 				73CF0EF925727E2300EB7386 /* Assets.xcassets in Resources */,
 				73CF0EF725727E2200EB7386 /* Main.storyboard in Resources */,
+				73CF0FA52572C21400EB7386 /* SXLaunchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +328,10 @@
 			files = (
 				73CF0F7F2572B49100EB7386 /* SXLaunchListViewModel.swift in Sources */,
 				73CF0F842572B49F00EB7386 /* SXLaunchDetailsViewModel.swift in Sources */,
+				73CF0FB42573B20D00EB7386 /* SXHelpers.swift in Sources */,
 				73CF0EF425727E2200EB7386 /* SXLaunchListViewController.swift in Sources */,
+				73CF0FA42572C21400EB7386 /* SXLaunchCell.swift in Sources */,
+				73CF0FAC2572C24C00EB7386 /* UITableViewCell+Extension.swift in Sources */,
 				73CF0F772572AE7B00EB7386 /* SXLaunchDetailsViewController.swift in Sources */,
 				73CF0EF025727E2200EB7386 /* AppDelegate.swift in Sources */,
 				73CF0EF225727E2200EB7386 /* SceneDelegate.swift in Sources */,
