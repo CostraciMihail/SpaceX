@@ -27,6 +27,7 @@
 		73CF0FDF2573C01300EB7386 /* SXLaunchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0FDE2573C01300EB7386 /* SXLaunchModel.swift */; };
 		73CF0FE82573C14900EB7386 /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0FE72573C14900EB7386 /* Date+Formatter.swift */; };
 		73CF0FED2573C6B100EB7386 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0FEC2573C6B100EB7386 /* UIColor+Extensions.swift */; };
+		73CF0FF22573F16300EB7386 /* SXStoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0FF12573F16300EB7386 /* SXStoryboardInstantiatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		73CF0FDE2573C01300EB7386 /* SXLaunchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXLaunchModel.swift; sourceTree = "<group>"; };
 		73CF0FE72573C14900EB7386 /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
 		73CF0FEC2573C6B100EB7386 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		73CF0FF12573F16300EB7386 /* SXStoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXStoryboardInstantiatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		73CF0EEE25727E2200EB7386 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				73CF0FF62573F16600EB7386 /* Helpers */,
 				73CF0FE32573C01800EB7386 /* Models */,
 				73CF0FAA2572C24100EB7386 /* Extensions */,
 				73CF0EEF25727E2200EB7386 /* AppDelegate.swift */,
@@ -134,7 +137,6 @@
 				73CF0EF825727E2300EB7386 /* Assets.xcassets */,
 				73CF0EFA25727E2300EB7386 /* LaunchScreen.storyboard */,
 				73CF0EFD25727E2300EB7386 /* Info.plist */,
-				73CF0FB32573B20D00EB7386 /* SXHelpers.swift */,
 			);
 			path = SpaceX;
 			sourceTree = "<group>";
@@ -211,6 +213,15 @@
 				73CF0FDE2573C01300EB7386 /* SXLaunchModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		73CF0FF62573F16600EB7386 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				73CF0FB32573B20D00EB7386 /* SXHelpers.swift */,
+				73CF0FF12573F16300EB7386 /* SXStoryboardInstantiatable.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +363,7 @@
 				73CF0F842572B49F00EB7386 /* SXLaunchDetailsViewModel.swift in Sources */,
 				73CF0FB42573B20D00EB7386 /* SXHelpers.swift in Sources */,
 				73CF0EF425727E2200EB7386 /* SXLaunchListViewController.swift in Sources */,
+				73CF0FF22573F16300EB7386 /* SXStoryboardInstantiatable.swift in Sources */,
 				73CF0FA42572C21400EB7386 /* SXLaunchCell.swift in Sources */,
 				73CF0FAC2572C24C00EB7386 /* UITableViewCell+Extensions.swift in Sources */,
 				73CF0F772572AE7B00EB7386 /* SXLaunchDetailsViewController.swift in Sources */,

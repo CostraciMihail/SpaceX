@@ -28,7 +28,7 @@
         <!--Launch Details View Controller-->
         <scene sceneID="7Jg-vF-odc">
             <objects>
-                <viewController id="gAY-CP-Q7b" customClass="SXLaunchDetailsViewController" customModule="SpaceX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SXLaunchDetailsViewControllerID" id="gAY-CP-Q7b" customClass="SXLaunchDetailsViewController" customModule="SpaceX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2lg-6C-XQC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

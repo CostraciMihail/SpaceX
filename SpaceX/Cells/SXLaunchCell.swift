@@ -13,9 +13,10 @@ class SXLaunchCell: UITableViewCell {
   @IBOutlet weak var launchImage: UIImageView!
   @IBOutlet weak var launchTitle: UILabel!
   @IBOutlet weak var launchDate: UILabel!
-  
   @IBOutlet weak var favoriteButton: UIButton!
   var cellStyle: SXLaunchCellStyle = .default
+  
+  var launchItem: SXLaunchModel?
   
   enum SXLaunchCellStyle {
     case favorite, `default`
@@ -32,6 +33,7 @@ class SXLaunchCell: UITableViewCell {
   
   func configure(with launchItem: SXLaunchModel, style: SXLaunchCellStyle) {
     
+    self.launchItem = launchItem
     self.cellStyle = style
     setUpFavoriteButton(for: style)
     

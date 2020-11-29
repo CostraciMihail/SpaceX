@@ -56,10 +56,12 @@ class SXLaunchListViewController: UIViewController {
   
   func setUpNavigationBar() {
     
-    favoritesBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star.fill"),
+    favoritesBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star"),
                                              style: .plain,
                                              target: self,
                                              action: #selector(favoritesBarButtonAction))
+    
+    favoritesBarButtonItem.tintColor = .red
     
     navigationItem.rightBarButtonItem = favoritesBarButtonItem
   }
@@ -157,6 +159,13 @@ extension SXLaunchListViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
+    guard let _dataSource = dataSource,
+          let selectedCell = _dataSource.tableView(tableView, cellForRowAt: indexPath) as? SXLaunchCell,
+          let launchItem = selectedCell.launchItem else {
+      return
+    }
+    
+    router.openLauchDetailsScreen(from: self, launchItem: launchItem)
   }
   
 }
