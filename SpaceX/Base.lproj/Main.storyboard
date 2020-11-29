@@ -30,16 +30,123 @@
             <objects>
                 <viewController storyboardIdentifier="SXLaunchDetailsViewControllerID" id="gAY-CP-Q7b" customClass="SXLaunchDetailsViewController" customModule="SpaceX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2lg-6C-XQC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpF-CW-Ftf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97f-ne-YD4" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="495.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOt-8f-bcO">
+                                                <rect key="frame" x="0.0" y="452.5" width="414" height="33"/>
+                                                <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Wikipedia">
+                                                    <color key="titleColor" red="0.0" green="0.4673235416" blue="0.89521425960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D30-VF-ULI">
+                                                <rect key="frame" x="0.0" y="376.5" width="414" height="56"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rocekt name: Falcon 9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDU-AV-1QY">
+                                                        <rect key="frame" x="111" y="0.0" width="192" height="23"/>
+                                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <color key="textColor" red="0.38349214199999998" green="0.88230770830000005" blue="0.9589605927" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payload mass: 2760.0 kg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aP-TX-jvd">
+                                                        <rect key="frame" x="102" y="33" width="210.5" height="23"/>
+                                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <color key="textColor" red="0.38349214199999998" green="0.88230770830000005" blue="0.9589605927" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0V-Qy-Asu">
+                                                <rect key="frame" x="0.0" y="265" width="414" height="101.5"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                <string key="text">The launch used a refurbished booster (from CRS-12) fot the 11th time, and a refunished capsuele(C100 from CRS-8)The launch used a refurbished booster (from CRS-12) fot the 11th time, and a refunished capsuele(C100 from CRS-8)</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.83529411764705885" green="0.84313725490196079" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="April 2, 2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TR-vh-ibF">
+                                                <rect key="frame" x="0.0" y="226" width="414" height="29"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="textColor" red="0.83529411764705885" green="0.84313725490196079" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vS6-i1-XnD">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="221"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="221" id="Gtl-5g-Jzs"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1000" id="0Br-w4-jiq"/>
+                                            <constraint firstAttribute="trailing" secondItem="e0V-Qy-Asu" secondAttribute="trailing" id="5YR-Lk-1vI"/>
+                                            <constraint firstItem="e0V-Qy-Asu" firstAttribute="top" secondItem="8TR-vh-ibF" secondAttribute="bottom" constant="10" id="66q-Rt-vvZ"/>
+                                            <constraint firstItem="vS6-i1-XnD" firstAttribute="leading" secondItem="97f-ne-YD4" secondAttribute="leading" id="DK0-6e-XZK"/>
+                                            <constraint firstItem="D30-VF-ULI" firstAttribute="top" secondItem="e0V-Qy-Asu" secondAttribute="bottom" constant="10" id="ETr-pu-cZB"/>
+                                            <constraint firstItem="XOt-8f-bcO" firstAttribute="leading" secondItem="97f-ne-YD4" secondAttribute="leading" id="Gd4-MN-W8t"/>
+                                            <constraint firstAttribute="trailing" secondItem="XOt-8f-bcO" secondAttribute="trailing" id="LMI-Dj-26J"/>
+                                            <constraint firstAttribute="trailing" secondItem="8TR-vh-ibF" secondAttribute="trailing" id="RsR-mi-KGB"/>
+                                            <constraint firstItem="8TR-vh-ibF" firstAttribute="leading" secondItem="97f-ne-YD4" secondAttribute="leading" id="VPc-Sv-kOp"/>
+                                            <constraint firstItem="D30-VF-ULI" firstAttribute="leading" secondItem="97f-ne-YD4" secondAttribute="leading" id="XPk-e0-6HG"/>
+                                            <constraint firstItem="XOt-8f-bcO" firstAttribute="top" secondItem="D30-VF-ULI" secondAttribute="bottom" constant="20" id="e6o-DW-hzz"/>
+                                            <constraint firstAttribute="trailing" secondItem="vS6-i1-XnD" secondAttribute="trailing" id="kt9-OH-eWP"/>
+                                            <constraint firstAttribute="bottom" secondItem="XOt-8f-bcO" secondAttribute="bottom" constant="10" id="nl0-xv-Ub0"/>
+                                            <constraint firstItem="e0V-Qy-Asu" firstAttribute="leading" secondItem="97f-ne-YD4" secondAttribute="leading" id="o5o-cp-cnG"/>
+                                            <constraint firstItem="vS6-i1-XnD" firstAttribute="top" secondItem="97f-ne-YD4" secondAttribute="top" id="q7e-4w-QB1"/>
+                                            <constraint firstAttribute="trailing" secondItem="D30-VF-ULI" secondAttribute="trailing" id="qFW-Da-7c6"/>
+                                            <constraint firstItem="8TR-vh-ibF" firstAttribute="top" secondItem="vS6-i1-XnD" secondAttribute="bottom" constant="5" id="ugM-An-hxM"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0Br-w4-jiq"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.11764705882352941" green="0.14117647058823529" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="97f-ne-YD4" firstAttribute="trailing" secondItem="SJ4-aM-Vko" secondAttribute="trailing" id="7cD-a0-L2n"/>
+                                    <constraint firstItem="97f-ne-YD4" firstAttribute="top" secondItem="SJ4-aM-Vko" secondAttribute="top" id="81J-iO-yZk"/>
+                                    <constraint firstItem="97f-ne-YD4" firstAttribute="bottom" secondItem="SJ4-aM-Vko" secondAttribute="bottom" id="TlK-hb-L5V"/>
+                                    <constraint firstItem="97f-ne-YD4" firstAttribute="leading" secondItem="SJ4-aM-Vko" secondAttribute="leading" id="p70-22-0j6"/>
+                                    <constraint firstItem="97f-ne-YD4" firstAttribute="width" secondItem="KjB-wL-Rdp" secondAttribute="width" id="uz4-Ae-adB"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="SJ4-aM-Vko"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="KjB-wL-Rdp"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="e6q-UQ-Yj8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.99204951524734497" green="0.99221879243850708" blue="0.9920387864112854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HpF-CW-Ftf" firstAttribute="top" secondItem="2lg-6C-XQC" secondAttribute="top" id="XHb-Nk-FHt"/>
+                            <constraint firstAttribute="bottom" secondItem="HpF-CW-Ftf" secondAttribute="bottom" id="XmX-ow-7cA"/>
+                            <constraint firstItem="HpF-CW-Ftf" firstAttribute="leading" secondItem="2lg-6C-XQC" secondAttribute="leading" id="frr-Ts-48b"/>
+                            <constraint firstAttribute="trailing" secondItem="HpF-CW-Ftf" secondAttribute="trailing" id="uUO-Np-fbz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bdG-Mh-Ur8"/>
+                    <size key="freeformSize" width="414" height="1000"/>
+                    <connections>
+                        <outlet property="youtubePlayerHeight" destination="Gtl-5g-Jzs" id="Zot-fH-sH9"/>
+                        <outlet property="youtubeVideoPlayer" destination="vS6-i1-XnD" id="orP-MV-kHo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RxV-Lp-fGp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="102"/>
+            <point key="canvasLocation" x="744.92753623188412" y="101.78571428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mfQ-aK-xEg">
@@ -59,11 +166,17 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
