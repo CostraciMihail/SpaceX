@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SXLaunchCell: UITableViewCell {
   
@@ -35,6 +36,7 @@ class SXLaunchCell: UITableViewCell {
     
     self.launchItem = launchItem
     self.cellStyle = style
+    laodImage()
     setUpFavoriteButton(for: style)
     
     launchTitle.text = launchItem.name
@@ -47,8 +49,23 @@ class SXLaunchCell: UITableViewCell {
     case .favorite: favoriteButton.isHidden = false
     default: favoriteButton.isHidden = true
     }
-  
   }
   
+  func laodImage() {
+    
+    let imageUrl = URL(string: launchItem?.imageUrl ?? "empty_url")
+    let imageProcessor = DownsamplingImageProcessor(size: launchImage.bounds.size)
+                 |> RoundCornerImageProcessor(cornerRadius: 15)
+    
+    launchImage.kf.indicatorType = .activity
+    launchImage.kf.setImage(with: imageUrl,
+                            placeholder: nil,
+                            options: [
+                              .processor(imageProcessor),
+                              .scaleFactor(UIScreen.main.scale),
+                              .transition(.fade(0.5)),
+                              .cacheOriginalImage
+                            ])
+  }
   
 }
