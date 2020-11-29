@@ -10,31 +10,56 @@ import Foundation
 import Combine
 
 protocol SXLaunchListViewModelInterface: ObservableObject {
- 
-  var launchesList: [SXLaunchModel] { get set }
+  var pastLaunchesList: [SXLaunchModel] { get set }
+  var errorPublisher: String? { get set }
+  var service: SXLaunchesAPIServiceInterface { get set }
   
   func loadLaunches()
   func refreshData()
 }
 
+/// SXLaunchListViewModel
 final class SXLaunchListViewModel: NSObject, SXLaunchListViewModelInterface {
-  
-  @Published var launchesList = [SXLaunchModel]()
-  
+  // MARK: - Properties
+  //
+  @Published var pastLaunchesList = [SXLaunchModel]()
+  @Published var errorPublisher: String?
+  var service: SXLaunchesAPIServiceInterface
   var cancellables = Set<AnyCancellable>()
   
+  /// Section type in DataSource
   enum Section: CaseIterable {
       case main
   }
 
+  // MARK: - Initialization
+  //
+  init(service: SXLaunchesAPIServiceInterface = SXLaunchesAPIService()) {
+    self.service = service
+  }
   
+  // MARK: - Load Data
+  //
   func loadLaunches() {
     
-    mainAsync(after: 0.5) { [weak self] in
+    service
+      .getAllPastLaunches()
+      .receive(on: DispatchQueue.main)
+      .sink { [weak self]  completion in
+      
+        guard let self = self else { return }
+
+        if case .failure(let error) = completion {
+          print("Fail load past launches: \(error)")
+          self.errorPublisher = error.localizedDescription
+        }
+        
+    } receiveValue: { [weak self] pastLaunches in
       
       guard let self = self else { return }
-      self.launchesList = SXMock.launchesList()
-    }
+      self.pastLaunchesList = pastLaunches
+      
+    }.store(in: &cancellables)
   }
   
   func refreshData() {
@@ -42,9 +67,11 @@ final class SXLaunchListViewModel: NSObject, SXLaunchListViewModelInterface {
     loadLaunches()
   }
   
+  // MARK: - Deinit
+  //
   func clearBindings() {
-      
-      cancellables.forEach { $0.cancel() }
+    
+    cancellables.forEach { $0.cancel() }
   }
   
   deinit {

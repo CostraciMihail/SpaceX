@@ -10,36 +10,36 @@ import Foundation
 
 /// SXLaunchesEndpoint
 enum SXLaunchesEndpoint: SXEndpointProtocol {
+  
+  case getAllPastLaunches
+  
+  /// URL path
+  var path: String {
+    switch self {
+    case .getAllPastLaunches: return "/launches/past"
+    }
+  }
+  
+  /// Parameter Encoding
+  var parameterEncoding: SXParameterEncoding {
+    return .json
+  }
+  
+  /// Http Method
+  var httpMethod: SXHTTPMethod {
+    return .get
+  }
+  
+  /// HTTPTask
+  var task: SXHTTPTask {
     
-    case getAllPastLaunches
+    let parameters: SXParameters? = nil
     
-    /// URL path
-    var path: String {
-        switch self {
-        case .getAllPastLaunches: return "/launches/past"
-        }
+    switch self {
+    case .getAllPastLaunches: break;
     }
     
-    /// Parameter Encoding
-    var parameterEncoding: SXParameterEncoding {
-        return .json
-    }
-    
-    /// Http Method
-    var httpMethod: SXHTTPMethod {
-        return .get
-    }
-    
-    /// HTTPTask
-    var task: SXHTTPTask {
-        
-        let parameters: SXParameters? = nil
-        
-        switch self {
-        case .getAllPastLaunches: break;
-        }
-        
-        return .requestParameters(bodyParameters: parameters, urlParameters: nil)
-    }
-
+    return .requestParameters(bodyParameters: parameters, urlParameters: nil)
+  }
+  
 }

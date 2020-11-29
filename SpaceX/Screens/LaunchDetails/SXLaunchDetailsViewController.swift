@@ -51,7 +51,7 @@ class SXLaunchDetailsViewController: UIViewController {
     dateLabel.text = viewModel.launchItem.dateString
     descriptionLabel.text = viewModel.launchItem.details
     nameLabel.text = "Rocket name: \(viewModel.launchItem.name)"
-    payloadLabel.text = "Payload mass: \(viewModel.launchItem.payloadMass?.first ?? "*")"
+    payloadLabel.text = "Payload mass: \(viewModel.launchItem.payloads?.first ?? "*")"
   }
   
   func adjustYoutubePlayerHeight() {

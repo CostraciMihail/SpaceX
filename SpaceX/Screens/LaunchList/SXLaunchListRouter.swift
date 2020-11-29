@@ -9,11 +9,14 @@
 import Foundation
 import UIKit
 
+/// SXLaunchListRouterInterface
 protocol SXLaunchListRouterInterface {
   func openFavoritesScreen(from vc: UIViewController)
   func openLauchDetailsScreen(from vc: UIViewController, launchItem: SXLaunchModel)
 }
 
+/// SXLaunchListRouter
+/// Provide destinations Screens
 struct SXLaunchListRouter: SXLaunchListRouterInterface {
   
   func openFavoritesScreen(from vc: UIViewController) {
