@@ -8,8 +8,19 @@
 
 import Foundation
 
-class SXLaunchDetailsViewModel {
+protocol SXLaunchDetailsViewModelInterface {
   
+  var launchItem: SXLaunchModel { get set }
+}
+
+class SXLaunchDetailsViewModel: SXLaunchDetailsViewModelInterface {
+  
+  var launchItem: SXLaunchModel
+  
+  init(launchItem: SXLaunchModel) {
+    
+    self.launchItem = launchItem
+  }
   
   deinit {
     #if DEBUG

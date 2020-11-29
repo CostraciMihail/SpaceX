@@ -28,7 +28,7 @@ final class SXLaunchListViewModel: NSObject, SXLaunchListViewModelInterface {
   
   func loadLaunches() {
     
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+    mainAsync(after: 0.5) { [weak self] in
       
       guard let self = self else { return }
       self.launchesList = SXLaunchModel.mocks()
