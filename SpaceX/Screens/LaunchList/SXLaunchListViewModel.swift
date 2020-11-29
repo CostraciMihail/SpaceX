@@ -15,27 +15,6 @@ protocol SXLaunchListViewModelInterface: ObservableObject {
   func refreshData()
 }
 
-struct SXLaunchModel: Hashable {
-  
-  var name: String
-  var date: Date
-  var imageUrl: String
-  
-  static func mocks() -> [SXLaunchModel] {
-    
-    var array = [SXLaunchModel]()
-    for index in 0...9 {
-      
-      let launch = SXLaunchModel(name: "Launch-\(index)",
-                                 date: Date(),
-                                 imageUrl: "launch.links.flickr.\(index)")
-      array.append(launch)
-    }
-    return array
-  }
-  
-}
-
 final class SXLaunchListViewModel: NSObject, SXLaunchListViewModelInterface {
   
   @Published var launchesList = [SXLaunchModel]()
