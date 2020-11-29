@@ -29,12 +29,12 @@ class SXLaunchListViewController: UIViewController {
     
     setUpUI()
     setUpBindings()
+    viewModel.loadLaunches()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-    viewModel.loadLaunches()
   }
   
   override func viewDidDisappear(_ animated: Bool) {
@@ -68,8 +68,10 @@ class SXLaunchListViewController: UIViewController {
     
     tableView = UITableView(frame: view.bounds)
     tableView.delegate = self
-    tableView.rowHeight = 65
+    tableView.estimatedRowHeight = 60
+    tableView.rowHeight = UITableView.automaticDimension
     tableView.separatorStyle = .singleLine
+    tableView.separatorColor = .white
     tableView.register(SXLaunchCell.nib, forCellReuseIdentifier: SXLaunchCell.identifier)
     view.addSubview(tableView)
   }
@@ -84,7 +86,7 @@ class SXLaunchListViewController: UIViewController {
         return nil
       }
       
-      cell.configure(with: launchItem)
+      cell.configure(with: launchItem, style: .default)
       return cell
      })
   }
