@@ -97,7 +97,7 @@ class SXLaunchListViewController: UIViewController {
   
   func setUpBindings() {
     
-    viewModel.$launchesList
+    viewModel.$pastLaunchesList
       .dropFirst()
       .receive(on: DispatchQueue.main)
       .sink { [weak self] items in
@@ -119,7 +119,7 @@ class SXLaunchListViewController: UIViewController {
     
     var snapshot = NSDiffableDataSourceSnapshot<SXLaunchListViewModel.Section, SXLaunchModel>()
     snapshot.appendSections([.main])
-    snapshot.appendItems(viewModel.launchesList, toSection: .main)
+    snapshot.appendItems(viewModel.pastLaunchesList, toSection: .main)
     dataSource?.apply(snapshot, animatingDifferences: true)
   }
   

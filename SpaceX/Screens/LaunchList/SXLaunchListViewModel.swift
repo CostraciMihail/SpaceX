@@ -11,7 +11,8 @@ import Combine
 
 protocol SXLaunchListViewModelInterface: ObservableObject {
  
-  var launchesList: [SXLaunchModel] { get set }
+  var pastLaunchesList: [SXLaunchModel] { get set }
+  var service: SXLaunchesAPIServiceInterface { get set }
   
   func loadLaunches()
   func refreshData()
@@ -19,22 +20,46 @@ protocol SXLaunchListViewModelInterface: ObservableObject {
 
 final class SXLaunchListViewModel: NSObject, SXLaunchListViewModelInterface {
   
-  @Published var launchesList = [SXLaunchModel]()
-  
+  @Published var pastLaunchesList = [SXLaunchModel]()
+  var service: SXLaunchesAPIServiceInterface
   var cancellables = Set<AnyCancellable>()
   
   enum Section: CaseIterable {
       case main
   }
 
+  init(service: SXLaunchesAPIServiceInterface = SXLaunchesAPIService()) {
+    self.service = service
+  }
   
   func loadLaunches() {
     
-    mainAsync(after: 0.5) { [weak self] in
+    //
+    service
+      .getAllPastLaunches()
+      .receive(on: DispatchQueue.main)
+      .sink { completion in
+      
+        if case .failure(let error) = completion {
+          print("Fail load past launches: \(error)")
+        }
+        
+    } receiveValue: { [weak self] pastLaunches in
       
       guard let self = self else { return }
-      self.launchesList = SXMock.launchesList()
-    }
+      self.pastLaunchesList = pastLaunches
+      
+    }.store(in: &cancellables)
+
+    
+    
+    
+    //
+//    mainAsync(after: 0.5) { [weak self] in
+//
+//      guard let self = self else { return }
+//      self.launchesList = SXMock.launchesList()
+//    }
   }
   
   func refreshData() {

@@ -53,17 +53,32 @@ class SXLaunchCell: UITableViewCell {
   
   func laodImage() {
     
-    let imageUrl = URL(string: launchItem?.links?.flickr?.original?.first ?? "empty_url")
+    var arrayOfLinks = [String]()
+    
+    let flickrSmallUrls = launchItem?.links?.flickr?.small?.compactMap({ $0 }) ?? []
+    let flickrOriginalUrls = launchItem?.links?.flickr?.original?.compactMap({ $0 }) ?? []
+    
+    let patchSmallUrls = launchItem?.links?.patch?.small
+    let patchOriginalUrls = launchItem?.links?.patch?.original
+    let patchImageUrls = [patchSmallUrls, patchOriginalUrls].compactMap({ $0 })
+    
+    arrayOfLinks.append(contentsOf: flickrSmallUrls)
+    arrayOfLinks.append(contentsOf: flickrOriginalUrls)
+    arrayOfLinks.append(contentsOf: patchImageUrls)
+
+    let imageUrlString = arrayOfLinks.first ?? "empty_url"
+    
+    let imageURL = URL(string: imageUrlString)
     let imageProcessor = DownsamplingImageProcessor(size: launchImage.bounds.size)
-                 |> RoundCornerImageProcessor(cornerRadius: 15)
+                 |> RoundCornerImageProcessor(cornerRadius: 15) 
     
     launchImage.kf.indicatorType = .activity
-    launchImage.kf.setImage(with: imageUrl,
+    launchImage.kf.setImage(with: imageURL,
                             placeholder: nil,
                             options: [
                               .processor(imageProcessor),
-                              .scaleFactor(UIScreen.main.scale),
-                              .transition(.fade(0.5)),
+//                              .scaleFactor(UIScreen.main.scale),
+                              .transition(.fade(0.05)),
                               .cacheOriginalImage
                             ])
   }

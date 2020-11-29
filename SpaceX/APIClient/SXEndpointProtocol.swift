@@ -48,7 +48,7 @@ protocol SXEndpointProtocol {
 extension SXEndpointProtocol {
     
     var baseURL: URL {
-        URL(string: "api.spacexdata.com/v4")!
+        URL(string: "https://api.spacexdata.com/v4")!
     }
     
     var headers: SXHTTPHeaders? {
