@@ -33,7 +33,7 @@ final class SXLaunchListViewModel: NSObject, SXLaunchListViewModelInterface {
     mainAsync(after: 0.5) { [weak self] in
       
       guard let self = self else { return }
-      self.launchesList = SXLaunchModel.mocks()
+      self.launchesList = SXMock.launchesList()
     }
   }
   
