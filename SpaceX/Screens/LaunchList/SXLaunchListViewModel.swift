@@ -11,6 +11,8 @@ import Combine
 
 protocol SXLaunchListViewModelInterface: ObservableObject {
  
+  var launchesList: [SXLaunchModel] { get set }
+  
   func loadLaunches()
   func refreshData()
 }

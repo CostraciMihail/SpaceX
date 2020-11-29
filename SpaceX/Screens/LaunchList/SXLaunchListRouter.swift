@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 protocol SXLaunchListRouterInterface {
-  
   func openFavoritesScreen(from vc: UIViewController)
   func openLauchDetailsScreen(from vc: UIViewController, launchItem: SXLaunchModel)
 }
