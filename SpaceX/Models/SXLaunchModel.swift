@@ -12,7 +12,7 @@ struct SXLaunchModel: Hashable {
   
   var name: String
   var date: Date
-  var imageUrl: String
+  var imageUrl: String = "empty_url"
   
   static func mocks() -> [SXLaunchModel] {
     
@@ -21,7 +21,7 @@ struct SXLaunchModel: Hashable {
       
       let launch = SXLaunchModel(name: "Launch-\(index)",
                                  date: Date(),
-                                 imageUrl: "launch.links.flickr.\(index)")
+                                 imageUrl: "https://live.staticflickr.com/65535/50644831893_bb40b60827_o.jpg")
       array.append(launch)
     }
     return array
