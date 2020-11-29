@@ -40,7 +40,7 @@ class SXLaunchCell: UITableViewCell {
     setUpFavoriteButton(for: style)
     
     launchTitle.text = launchItem.name
-    launchDate.text = launchItem.date.string(withFormat: "MMMM d, yyyy")
+    launchDate.text = launchItem.dateString
   }
 
   func setUpFavoriteButton(for style: SXLaunchCellStyle) {
