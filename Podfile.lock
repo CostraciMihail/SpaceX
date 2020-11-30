@@ -1,22 +1,32 @@
 PODS:
-  - Kingfisher (5.15.8):
-    - Kingfisher/Core (= 5.15.8)
   - Kingfisher/Core (5.15.8)
+  - Kingfisher/SwiftUI (5.15.8):
+    - Kingfisher/Core
+  - Realm (5.0.1):
+    - Realm/Headers (= 5.0.1)
+  - Realm/Headers (5.0.1)
+  - RealmSwift (5.0.1):
+    - Realm (= 5.0.1)
   - youtube-ios-player-helper (1.0.2)
 
 DEPENDENCIES:
-  - Kingfisher (~> 5.0)
+  - Kingfisher/SwiftUI (~> 5.0)
+  - RealmSwift
   - youtube-ios-player-helper (~> 1.0.2)
 
 SPEC REPOS:
   trunk:
     - Kingfisher
+    - Realm
+    - RealmSwift
     - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
+  Realm: d36cfc336d76d2e15b13651beb6050f49354de4b
+  RealmSwift: f29ae0ceaf4fbaf4803c40bbebd838ea2beb903a
   youtube-ios-player-helper: 40b96e52c22445f0fdc43731cefa32c67075ff81
 
-PODFILE CHECKSUM: 3a67d5a8f79327284c9a6849cfb0e6f43ff92e30
+PODFILE CHECKSUM: 3583f9dc2c04ff39d4a8122e9a7743c8e2f0f759
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

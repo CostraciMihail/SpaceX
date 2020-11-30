@@ -51,7 +51,7 @@ class SXLaunchListViewController: UIViewController {
   
   func setUpNavigationBar() {
     
-    favoritesBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star"),
+    favoritesBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star.fill"),
                                              style: .plain,
                                              target: self,
                                              action: #selector(favoritesBarButtonAction))
@@ -83,7 +83,13 @@ class SXLaunchListViewController: UIViewController {
         return nil
       }
       
-      cell.configure(with: launchItem, style: .default)
+      cell.configure(with: launchItem, style: .favorite)
+      cell.didPressedFavorite = { [weak self] isFavorite in
+        
+        guard let self = self else { return }
+        self.viewModel.updateFavorites(with: launchItem, isFavorite: isFavorite)
+      }
+                                                
       return cell
      })
   }
@@ -105,7 +111,10 @@ class SXLaunchListViewController: UIViewController {
         print("new items.count: \(items.count)")
         
         guard let self = self else { return }
-        mainAsync { self.reloadDataSources(with: items) }
+        mainAsync {
+          self.refreshControl.endRefreshing()
+          self.reloadDataSources(with: items)
+        }
         
       }).store(in: &cancellables)
     

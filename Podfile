@@ -5,8 +5,9 @@ target 'SpaceX' do
   use_frameworks!
 
   # Pods for SpaceX
-  pod 'Kingfisher', '~> 5.0'
+  pod 'Kingfisher/SwiftUI', '~> 5.0'
   pod "youtube-ios-player-helper", "~> 1.0.2"
+  pod 'RealmSwift'
 
   target 'SpaceXTests' do
     inherit! :search_paths

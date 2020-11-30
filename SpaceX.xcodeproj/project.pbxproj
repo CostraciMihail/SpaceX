@@ -15,6 +15,11 @@
 		7320CBC225743CE60091B391 /* SXError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320CBBC25743CE60091B391 /* SXError.swift */; };
 		7320CBD925743E650091B391 /* SXAppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320CBD825743E650091B391 /* SXAppContext.swift */; };
 		7320CBE7257465530091B391 /* SXMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320CBE6257465530091B391 /* SXMock.swift */; };
+		7320CBF2257470A10091B391 /* SXFavoritesLaunchesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320CBF1257470A10091B391 /* SXFavoritesLaunchesListView.swift */; };
+		7320CC29257490950091B391 /* SXFavoritesLaunchesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320CC28257490950091B391 /* SXFavoritesLaunchesListViewModel.swift */; };
+		7320CC2E257490B30091B391 /* SXLauncheRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320CC2D257490B30091B391 /* SXLauncheRowView.swift */; };
+		7320CC33257495250091B391 /* SXLaunchModelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320CC32257495250091B391 /* SXLaunchModelDB.swift */; };
+		7320CC42257496800091B391 /* SXDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320CC41257496800091B391 /* SXDatabaseManager.swift */; };
 		73CF0EF025727E2200EB7386 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0EEF25727E2200EB7386 /* AppDelegate.swift */; };
 		73CF0EF225727E2200EB7386 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0EF125727E2200EB7386 /* SceneDelegate.swift */; };
 		73CF0EF425727E2200EB7386 /* SXLaunchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0EF325727E2200EB7386 /* SXLaunchListViewController.swift */; };
@@ -70,6 +75,11 @@
 		7320CBBC25743CE60091B391 /* SXError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXError.swift; sourceTree = "<group>"; };
 		7320CBD825743E650091B391 /* SXAppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXAppContext.swift; sourceTree = "<group>"; };
 		7320CBE6257465530091B391 /* SXMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXMock.swift; sourceTree = "<group>"; };
+		7320CBF1257470A10091B391 /* SXFavoritesLaunchesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXFavoritesLaunchesListView.swift; sourceTree = "<group>"; };
+		7320CC28257490950091B391 /* SXFavoritesLaunchesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXFavoritesLaunchesListViewModel.swift; sourceTree = "<group>"; };
+		7320CC2D257490B30091B391 /* SXLauncheRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXLauncheRowView.swift; sourceTree = "<group>"; };
+		7320CC32257495250091B391 /* SXLaunchModelDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXLaunchModelDB.swift; sourceTree = "<group>"; };
+		7320CC41257496800091B391 /* SXDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXDatabaseManager.swift; sourceTree = "<group>"; };
 		73CF0EEC25727E2200EB7386 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CF0EEF25727E2200EB7386 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73CF0EF125727E2200EB7386 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +179,16 @@
 			path = APIClient;
 			sourceTree = "<group>";
 		};
+		7320CBF6257470A60091B391 /* FavoritesLaunchesList */ = {
+			isa = PBXGroup;
+			children = (
+				7320CBF1257470A10091B391 /* SXFavoritesLaunchesListView.swift */,
+				7320CC28257490950091B391 /* SXFavoritesLaunchesListViewModel.swift */,
+				7320CC2D257490B30091B391 /* SXLauncheRowView.swift */,
+			);
+			path = FavoritesLaunchesList;
+			sourceTree = "<group>";
+		};
 		73CF0EE325727E2200EB7386 = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +199,9 @@
 				283196076B85FB640107D55C /* Pods */,
 				7138C589E939326E74340C09 /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 			usesTabs = 0;
 		};
 		73CF0EED25727E2200EB7386 /* Products */ = {
@@ -198,6 +220,7 @@
 				7320CBB625743CBD0091B391 /* APIClient */,
 				73CF0EEF25727E2200EB7386 /* AppDelegate.swift */,
 				73CF0EF125727E2200EB7386 /* SceneDelegate.swift */,
+				7320CC41257496800091B391 /* SXDatabaseManager.swift */,
 				73CF0FF62573F16600EB7386 /* Helpers */,
 				73CF0FE32573C01800EB7386 /* Models */,
 				73CF0FAA2572C24100EB7386 /* Extensions */,
@@ -234,6 +257,7 @@
 			children = (
 				73CF0F892572B6CA00EB7386 /* LaunchList */,
 				73CF0F8A2572B6D700EB7386 /* LaunchDetails */,
+				7320CBF6257470A60091B391 /* FavoritesLaunchesList */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -281,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				73CF0FDE2573C01300EB7386 /* SXLaunchModel.swift */,
+				7320CC32257495250091B391 /* SXLaunchModelDB.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -546,18 +571,23 @@
 				73CF0FB42573B20D00EB7386 /* SXHelpers.swift in Sources */,
 				73CF0EF425727E2200EB7386 /* SXLaunchListViewController.swift in Sources */,
 				7320CBBF25743CE60091B391 /* SXLaunchesAPIService.swift in Sources */,
+				7320CC2E257490B30091B391 /* SXLauncheRowView.swift in Sources */,
 				73CF0FF22573F16300EB7386 /* SXStoryboardInstantiatable.swift in Sources */,
 				73CF0FA42572C21400EB7386 /* SXLaunchCell.swift in Sources */,
 				73CF0FAC2572C24C00EB7386 /* UITableViewCell+Extensions.swift in Sources */,
+				7320CC42257496800091B391 /* SXDatabaseManager.swift in Sources */,
 				7320CBD925743E650091B391 /* SXAppContext.swift in Sources */,
 				73CF0F772572AE7B00EB7386 /* SXLaunchDetailsViewController.swift in Sources */,
 				73CF0EF025727E2200EB7386 /* AppDelegate.swift in Sources */,
+				7320CC29257490950091B391 /* SXFavoritesLaunchesListViewModel.swift in Sources */,
 				73CF0EF225727E2200EB7386 /* SceneDelegate.swift in Sources */,
+				7320CC33257495250091B391 /* SXLaunchModelDB.swift in Sources */,
 				7320CBE7257465530091B391 /* SXMock.swift in Sources */,
 				7320CBC025743CE60091B391 /* SXAPIClient.swift in Sources */,
 				73CF0FED2573C6B100EB7386 /* UIColor+Extensions.swift in Sources */,
 				73CF0FE82573C14900EB7386 /* Date+Formatter.swift in Sources */,
 				7320CBBE25743CE60091B391 /* SXEndpointProtocol.swift in Sources */,
+				7320CBF2257470A10091B391 /* SXFavoritesLaunchesListView.swift in Sources */,
 				7320CBC225743CE60091B391 /* SXError.swift in Sources */,
 				73CF0F8C2572B76B00EB7386 /* SXLaunchListRouter.swift in Sources */,
 			);
@@ -737,6 +767,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FRKQXAN23U;
 				INFOPLIST_FILE = SpaceX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -757,6 +788,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FRKQXAN23U;
 				INFOPLIST_FILE = SpaceX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -9,31 +9,38 @@
 import UIKit
 import Kingfisher
 
+/// SXLaunchCell
 class SXLaunchCell: UITableViewCell {
-  
+  // MARK: - Properties
+  //
   @IBOutlet weak var launchImage: UIImageView!
   @IBOutlet weak var launchTitle: UILabel!
   @IBOutlet weak var launchDate: UILabel!
   @IBOutlet weak var favoriteButton: UIButton!
   var cellStyle: SXLaunchCellStyle = .default
-  
   var launchItem: SXLaunchModel?
+  var isFavorite: Bool = false
+  var didPressedFavorite: ((Bool) -> ())?
   
   enum SXLaunchCellStyle {
     case favorite, `default`
   }
-
   
+  // MARK: - Configuration
+  //
   override func awakeFromNib() {
     super.awakeFromNib()
   
     setUpFavoriteButton(for: cellStyle)
     launchImage.layer.borderWidth = 1
-    launchImage.layer.borderColor = UIColor.launchesListSeparatorColor.cgColor
+    launchImage.layer.borderColor = UIColor.LaunchesListSeparatorColor.cgColor
   }
   
-  func configure(with launchItem: SXLaunchModel, style: SXLaunchCellStyle) {
+  func configure(with launchItem: SXLaunchModel,
+                 style: SXLaunchCellStyle,
+                 isFavorite: Bool = false) {
     
+    self.isFavorite = isFavorite
     self.launchItem = launchItem
     self.cellStyle = style
     laodImage()
@@ -46,41 +53,45 @@ class SXLaunchCell: UITableViewCell {
   func setUpFavoriteButton(for style: SXLaunchCellStyle) {
    
     switch style {
-    case .favorite: favoriteButton.isHidden = false
-    default: favoriteButton.isHidden = true
+    case .favorite:
+      favoriteButton.isHidden = false
+    default:
+      favoriteButton.isHidden = true
     }
+    
+    favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+    favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
+    favoriteButton.isSelected = isFavorite
+    favoriteButton.addTarget(self,
+                             action: #selector(didPressedFavoriteButton),
+                             for: .touchUpInside)
   }
   
+  // MARK: - Actions
+  //
   func laodImage() {
     
-    var arrayOfLinks = [String]()
+    guard let imageUrl = launchItem?.links?.defaultImage else {
+      return
+    }
     
-    let flickrSmallUrls = launchItem?.links?.flickr?.small?.compactMap({ $0 }) ?? []
-    let flickrOriginalUrls = launchItem?.links?.flickr?.original?.compactMap({ $0 }) ?? []
-    
-    let patchSmallUrls = launchItem?.links?.patch?.small
-    let patchOriginalUrls = launchItem?.links?.patch?.original
-    let patchImageUrls = [patchSmallUrls, patchOriginalUrls].compactMap({ $0 })
-    
-    arrayOfLinks.append(contentsOf: flickrSmallUrls)
-    arrayOfLinks.append(contentsOf: flickrOriginalUrls)
-    arrayOfLinks.append(contentsOf: patchImageUrls)
-
-    let imageUrlString = arrayOfLinks.first ?? "empty_url"
-    
-    let imageURL = URL(string: imageUrlString)
     let imageProcessor = DownsamplingImageProcessor(size: launchImage.bounds.size)
                  |> RoundCornerImageProcessor(cornerRadius: 15) 
     
     launchImage.kf.indicatorType = .activity
-    launchImage.kf.setImage(with: imageURL,
+    launchImage.kf.setImage(with: URL(string: imageUrl),
                             placeholder: nil,
                             options: [
                               .processor(imageProcessor),
-//                              .scaleFactor(UIScreen.main.scale),
                               .transition(.fade(0.05)),
-                              .cacheOriginalImage
+                              .cacheOriginalImage,
                             ])
+  }
+  
+  @objc func didPressedFavoriteButton(_ sender: UIButton) {
+    favoriteButton.isSelected = !favoriteButton.isSelected
+    isFavorite = !favoriteButton.isSelected
+    didPressedFavorite?(isFavorite)
   }
   
 }

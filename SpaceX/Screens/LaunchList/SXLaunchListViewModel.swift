@@ -16,6 +16,7 @@ protocol SXLaunchListViewModelInterface: ObservableObject {
   
   func loadLaunches()
   func refreshData()
+  func updateFavorites(with launchItem: SXLaunchModel, isFavorite: Bool)
 }
 
 /// SXLaunchListViewModel
@@ -65,6 +66,16 @@ final class SXLaunchListViewModel: NSObject, SXLaunchListViewModelInterface {
   func refreshData() {
     
     loadLaunches()
+  }
+  
+  func updateFavorites(with launchItem: SXLaunchModel, isFavorite: Bool) {
+   
+    if isFavorite {
+      SXDatabaseManager.shared.deleteFromFavorites(launchItem: launchItem)
+      
+    } else {
+      SXDatabaseManager.shared.saveToFavorites(launchItem: launchItem)
+    }
   }
   
   // MARK: - Deinit

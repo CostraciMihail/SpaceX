@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct SXLaunchModel: Codable, Hashable {
   var id: String
@@ -18,6 +19,13 @@ struct SXLaunchModel: Codable, Hashable {
   var dateString: String {
     guard let date = staticFireDateUnix else { return "-- -- --" }
     return Date(timeIntervalSince1970: date).string(withFormat: "MMMM d, yyyy")
+  }
+  
+  func toDBModel() -> SXLaunchModelDB {
+    return SXLaunchModelDB(launchID: id,
+                           name: name,
+                           imageUrl: links?.defaultImage,
+                           staticFireDateUnix: staticFireDateUnix)
   }
 }
 
@@ -42,8 +50,27 @@ struct SXIFickrImageSize: Codable, Hashable, SXIArrayImageSize {
 }
 
 struct SXImageLinks: Codable, Hashable {
+  var defaultImage: String {
+    allImagesUrls().first ?? "empty-url"
+  }
   var patch: SXIPatchImageSize?
   var flickr: SXIFickrImageSize?
   var youtubeID: String?
   var wikipedia: String?
+  
+  func allImagesUrls() -> [String] {
+    
+    var arrayOfLinks = [String]()
+    let flickrSmallUrls = flickr?.small?.compactMap({ $0 }) ?? []
+    let flickrOriginalUrls = flickr?.original?.compactMap({ $0 }) ?? []
+    let patchSmallUrls = patch?.small
+    let patchOriginalUrls = patch?.original
+    let patchImageUrls = [patchSmallUrls, patchOriginalUrls].compactMap({ $0 })
+    
+    arrayOfLinks.append(contentsOf: flickrSmallUrls)
+    arrayOfLinks.append(contentsOf: flickrOriginalUrls)
+    arrayOfLinks.append(contentsOf: patchImageUrls)
+
+    return arrayOfLinks
+  }
 }

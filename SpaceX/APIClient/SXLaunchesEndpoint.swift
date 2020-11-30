@@ -24,7 +24,7 @@ enum SXLaunchesEndpoint: SXEndpointProtocol {
   var parameterEncoding: SXParameterEncoding {
     return .json
   }
-  
+
   /// Http Method
   var httpMethod: SXHTTPMethod {
     return .get

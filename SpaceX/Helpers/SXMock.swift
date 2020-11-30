@@ -32,7 +32,7 @@ struct SXMock {
     var array = [SXLaunchModel]()
     for index in 0...9 {
       
-      let launch = SXLaunchModel(id: "5fb95b3f3a88ae63c954603c",
+      let launch = SXLaunchModel(id: "\(index)",
                                  name: "Starlink-\(index) (v1.0)",
                                  details: details,
                                  staticFireDateUnix: dateUnix,

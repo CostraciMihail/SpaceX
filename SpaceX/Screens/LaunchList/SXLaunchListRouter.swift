@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 /// SXLaunchListRouterInterface
 protocol SXLaunchListRouterInterface {
@@ -21,12 +22,13 @@ struct SXLaunchListRouter: SXLaunchListRouterInterface {
   
   func openFavoritesScreen(from vc: UIViewController) {
     
-    guard let _ = vc.navigationController else {
+    guard let navController = vc.navigationController else {
       return
     }
-    
-    // TODO: Open FavoritesLaunchList Screen
-    //
+  
+    let viewModel = SXFavoritesLaunchesListViewModel()
+    let favoritesLaunchesVC = UIHostingController(rootView: SXFavoritesLaunchesListView(viewModel: viewModel))
+    navController.pushViewController(favoritesLaunchesVC, animated: true)
   }
   
   func openLauchDetailsScreen(from vc: UIViewController, launchItem: SXLaunchModel) {
@@ -35,8 +37,8 @@ struct SXLaunchListRouter: SXLaunchListRouterInterface {
       return
     }
   
-    let lauchDetailsScreen = SXLaunchDetailsViewController.instantiate(with: launchItem)
-    navController.pushViewController(lauchDetailsScreen, animated: true)
+    let lauchDetailsVC = SXLaunchDetailsViewController.instantiate(with: launchItem)
+    navController.pushViewController(lauchDetailsVC, animated: true)
   }
   
 }

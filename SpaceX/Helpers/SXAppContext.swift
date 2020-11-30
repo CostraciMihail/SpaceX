@@ -7,12 +7,21 @@
 //
 
 import Foundation
+import UIKit
 
 /// SXAppContext
 final class SXAppContext {
-    
-    /// App Bundle ID
-    static var bundleID: String {
-        return Bundle.main.bundleIdentifier ?? ""
-    }
+  
+  /// App Bundle ID
+  static var bundleID: String {
+    return Bundle.main.bundleIdentifier ?? ""
+  }
+  
+  static var screenHeight: CGFloat {
+    UIScreen.main.bounds.size.height
+  }
+ 
+  static var screenWidth: CGFloat {
+    UIScreen.main.bounds.size.width
+  }
 }
