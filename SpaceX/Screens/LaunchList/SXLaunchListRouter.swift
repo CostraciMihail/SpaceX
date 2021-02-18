@@ -20,23 +20,29 @@ protocol SXLaunchListRouterInterface {
 /// Provide destinations Screens
 struct SXLaunchListRouter: SXLaunchListRouterInterface {
   
+  /// Open 'Favorites' Screen
+  /// - Parameter vc: from UIViewController
   func openFavoritesScreen(from vc: UIViewController) {
     
     guard let navController = vc.navigationController else {
       return
     }
-  
+    
     let viewModel = SXFavoritesLaunchesListViewModel()
     let favoritesLaunchesVC = UIHostingController(rootView: SXFavoritesLaunchesListView(viewModel: viewModel))
     navController.pushViewController(favoritesLaunchesVC, animated: true)
   }
   
+  /// Open 'Lauch Detail' screen.
+  /// - Parameters:
+  ///   - vc: from UIViewController
+  ///   - launchItem: launchItem
   func openLauchDetailsScreen(from vc: UIViewController, launchItem: SXLaunchModel) {
     
     guard let navController = vc.navigationController else {
       return
     }
-  
+    
     let lauchDetailsVC = SXLaunchDetailsViewController.instantiate(with: launchItem)
     navController.pushViewController(lauchDetailsVC, animated: true)
   }

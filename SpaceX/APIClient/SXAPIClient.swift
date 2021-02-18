@@ -11,26 +11,26 @@ import Combine
 
 /// SXAPIClientResponse
 struct SXAPIClientResponse<T> {
-    let value: T
-    let response: URLResponse
+  let value: T
+  let response: URLResponse
 }
 
 /// SXAPIClient responsable for making request
 struct SXAPIClient: SXErrorReponse {
+  
+  func run<T: Decodable>(_ request: URLRequest, _ decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<SXAPIClientResponse<T>, SXError> {
     
-    func run<T: Decodable>(_ request: URLRequest, _ decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<SXAPIClientResponse<T>, SXError> {
+    debugRequest(request)
+    
+    return URLSession.shared
+      .dataTaskPublisher(for: request)
+      .tryMap { result -> SXAPIClientResponse<T> in
         
-        debugRequest(request)
+        return try self.processResponse(result, decoder: decoder)
+      }.mapError({ error -> SXError in
         
-        return URLSession.shared
-            .dataTaskPublisher(for: request)
-            .tryMap { result -> SXAPIClientResponse<T> in
-            
-                return try self.processResponse(result, decoder: decoder)
-        }.mapError({ error -> SXError in
-            
-            return SXError.toError(error: error)
-        })
-        .eraseToAnyPublisher()
-    }
+        return SXError.toError(error: error)
+      })
+      .eraseToAnyPublisher()
+  }
 }

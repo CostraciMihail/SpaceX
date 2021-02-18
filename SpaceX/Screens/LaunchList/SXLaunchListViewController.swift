@@ -10,6 +10,7 @@ import Combine
 
 typealias SXLauchListDiffableDataSource = UITableViewDiffableDataSource<SXLaunchListViewModel.Section, SXLaunchModel>
 
+/// SXLaunchListViewController
 class SXLaunchListViewController: UIViewController {
   // MARK: - Properties
   //

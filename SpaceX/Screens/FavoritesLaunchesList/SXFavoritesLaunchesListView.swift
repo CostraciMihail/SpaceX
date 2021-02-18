@@ -8,10 +8,14 @@
 
 import SwiftUI
 
+/// SXFavoritesLaunchesListView
 struct SXFavoritesLaunchesListView<Model>: View where Model: SXFavoritesLaunchesListViewModelInterface {
-  
+  // MARK: - Properties
+  //
   @ObservedObject var viewModel: Model
   
+  // MARK: - Body
+  //
   var body: some View {
     
     GeometryReader { geometry in
@@ -40,7 +44,8 @@ struct SXFavoritesLaunchesListView<Model>: View where Model: SXFavoritesLaunches
   
 }
 
-/// PreviewProvider
+// MARK: - PreviewProvider
+//
 struct SXFavoritesLaunchesListView_Previews: PreviewProvider {
   static var previews: some View {
     SXFavoritesLaunchesListView(viewModel: SXFavoritesLaunchesListViewModel())

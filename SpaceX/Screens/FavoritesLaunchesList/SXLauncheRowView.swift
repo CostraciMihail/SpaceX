@@ -32,6 +32,8 @@ struct SXLauncheRowView<Model>: View where Model: SXFavoritesLaunchesListViewMod
   
   private var aspectRatio: CGFloat { CGFloat(1.9) }
   
+  // MARK: - Body
+  //
   var body: some View {
     
     VStack(spacing: 10) {

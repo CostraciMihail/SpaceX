@@ -17,10 +17,12 @@ final class SXAppContext {
     return Bundle.main.bundleIdentifier ?? ""
   }
   
+  /// Screen Height
   static var screenHeight: CGFloat {
     UIScreen.main.bounds.size.height
   }
- 
+  
+  /// Screen Width
   static var screenWidth: CGFloat {
     UIScreen.main.bounds.size.width
   }

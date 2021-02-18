@@ -22,6 +22,7 @@ class SXLaunchCell: UITableViewCell {
   var isFavorite: Bool = false
   var didPressedFavorite: ((Bool) -> ())?
   
+  /// SXLaunchCellStyle
   enum SXLaunchCellStyle {
     case favorite, `default`
   }

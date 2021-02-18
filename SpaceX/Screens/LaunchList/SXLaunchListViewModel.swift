@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 
+/// SXLaunchListViewModelInterface
 protocol SXLaunchListViewModelInterface: ObservableObject {
   var pastLaunchesList: [SXLaunchModel] { get set }
   var errorPublisher: String? { get set }
@@ -30,9 +31,9 @@ final class SXLaunchListViewModel: NSObject, SXLaunchListViewModelInterface {
   
   /// Section type in DataSource
   enum Section: CaseIterable {
-      case main
+    case main
   }
-
+  
   // MARK: - Initialization
   //
   init(service: SXLaunchesAPIServiceInterface = SXLaunchesAPIService()) {
@@ -47,20 +48,20 @@ final class SXLaunchListViewModel: NSObject, SXLaunchListViewModelInterface {
       .getAllPastLaunches()
       .receive(on: DispatchQueue.main)
       .sink { [weak self]  completion in
-      
+        
         guard let self = self else { return }
-
+        
         if case .failure(let error) = completion {
           print("Fail load past launches: \(error)")
           self.errorPublisher = error.localizedDescription
         }
         
-    } receiveValue: { [weak self] pastLaunches in
-      
-      guard let self = self else { return }
-      self.pastLaunchesList = pastLaunches
-      
-    }.store(in: &cancellables)
+      } receiveValue: { [weak self] pastLaunches in
+        
+        guard let self = self else { return }
+        self.pastLaunchesList = pastLaunches
+        
+      }.store(in: &cancellables)
   }
   
   func refreshData() {
@@ -69,7 +70,7 @@ final class SXLaunchListViewModel: NSObject, SXLaunchListViewModelInterface {
   }
   
   func updateFavorites(with launchItem: SXLaunchModel, isFavorite: Bool) {
-   
+    
     if isFavorite {
       SXDatabaseManager.shared.deleteFromFavorites(launchItem: launchItem)
       

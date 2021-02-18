@@ -11,23 +11,23 @@ import Combine
 
 /// SXLaunchesAPIServiceInterface
 protocol SXLaunchesAPIServiceInterface {
-    
-    func getAllPastLaunches() -> AnyPublisher<[SXLaunchModel], SXError>
+  
+  func getAllPastLaunches() -> AnyPublisher<[SXLaunchModel], SXError>
 }
 
 /// SXLaunchesAPIService
 class SXLaunchesAPIService: SXLaunchesAPIServiceInterface {
+  
+  var client = SXAPIClient()
+  
+  /// Loading all past list of launches 
+  /// - Returns: publisher with decoded data from JSON
+  func getAllPastLaunches() -> AnyPublisher<[SXLaunchModel], SXError> {
     
-    var client = SXAPIClient()
-    
-    /// Loading all past list of launches 
-    /// - Returns: publisher with decoded data from JSON
-    func getAllPastLaunches() -> AnyPublisher<[SXLaunchModel], SXError> {
-        
-        let service = SXLaunchesEndpoint.getAllPastLaunches
-        let request = URLRequest(service: service)
-        return client.run(request)
-            .map(\.value)
-            .eraseToAnyPublisher()
-    }
+    let service = SXLaunchesEndpoint.getAllPastLaunches
+    let request = URLRequest(service: service)
+    return client.run(request)
+      .map(\.value)
+      .eraseToAnyPublisher()
+  }
 }

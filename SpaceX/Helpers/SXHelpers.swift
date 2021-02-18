@@ -9,10 +9,20 @@
 import Foundation
 import UIKit
 
+/// Shortcut for DispatchQueue.main.asyncAfter()
+/// - Parameters:
+///   - after: after TimeInterval
+///   - closure: closure to trigger
 func mainAsync(after: TimeInterval = 0, execute closure: @escaping () -> Void) {
   DispatchQueue.main.asyncAfter(deadline: .now() + after, execute: closure)
 }
 
+/// An shortcut to show an UIAlertController with specified message.
+/// - Parameters:
+///   - title: Alert title
+///   - message: Alert message
+///   - from: UIViewController from which to show alert
+///   - handler: action handler
 func showMessage(_ title: String? = nil,
                  message: String,
                  from: UIViewController,

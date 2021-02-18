@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+/// SXLaunchModel
 struct SXLaunchModel: Codable, Hashable {
   var id: String
   var name: String
@@ -29,27 +30,35 @@ struct SXLaunchModel: Codable, Hashable {
   }
 }
 
+/// SXIArrayImageSize
 protocol SXIArrayImageSize {
   var small: [String]? { get set }
   var original: [String]? { get set }
 }
 
+/// SXIStringImageSize
 protocol SXIStringImageSize {
   var small: String? { get set }
   var original: String? { get set }
 }
 
+/// SXIPatchImageSize
 struct SXIPatchImageSize: Codable, Hashable, SXIStringImageSize {
   var small: String?
   var original: String?
 }
 
+/// SXIFickrImageSize
 struct SXIFickrImageSize: Codable, Hashable, SXIArrayImageSize {
   var small: [String]?
   var original: [String]?
 }
 
+/// SXImageLinks
 struct SXImageLinks: Codable, Hashable {
+  // MARK: - Properties
+  //
+  /// First url from 'allImagesUrls()' function.
   var defaultImage: String {
     allImagesUrls().first ?? "empty-url"
   }
@@ -58,6 +67,8 @@ struct SXImageLinks: Codable, Hashable {
   var youtubeID: String?
   var wikipedia: String?
   
+  /// Check and return an array of all available images urls.
+  /// - Returns: An Array of images urls.
   func allImagesUrls() -> [String] {
     
     var arrayOfLinks = [String]()

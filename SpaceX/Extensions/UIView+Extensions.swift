@@ -10,18 +10,22 @@ import Foundation
 import UIKit
 
 extension UIView {
+  
+  /// Make round corners to UIView
+  /// - Parameters:
+  ///   - cornerRadius: cornerRadius
+  ///   - corners: wich corners to apply corner radius
+  func roundCorners(cornerRadius: Double, corners: UIRectCorner) {
     
-    func roundCorners(cornerRadius: Double, corners: UIRectCorner) {
-        
-        let cornerRadii = CGSize(width: cornerRadius, height: cornerRadius)
-        let path = UIBezierPath(roundedRect: self.bounds,
-                                byRoundingCorners: corners,
-                                cornerRadii: cornerRadii)
-        
-        let maskLayer = CAShapeLayer()
-        maskLayer.frame = self.bounds
-        maskLayer.path = path.cgPath
-        self.layer.mask = maskLayer
-    }
+    let cornerRadii = CGSize(width: cornerRadius, height: cornerRadius)
+    let path = UIBezierPath(roundedRect: self.bounds,
+                            byRoundingCorners: corners,
+                            cornerRadii: cornerRadii)
     
+    let maskLayer = CAShapeLayer()
+    maskLayer.frame = self.bounds
+    maskLayer.path = path.cgPath
+    self.layer.mask = maskLayer
+  }
+  
 }

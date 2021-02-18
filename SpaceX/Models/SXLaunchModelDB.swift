@@ -9,8 +9,10 @@
 import Foundation
 import RealmSwift
 
+/// SXLaunchModelDB
 class SXLaunchModelDB: Object, NSCopying {
-  
+  // MARK: - Properties
+  //
   @objc dynamic var id: Int = Int.random(in: 0...100000)
   @objc dynamic var launchID: String = "\(Int.random(in: 0...100000))"
   @objc dynamic var isFavorite: Bool = false
@@ -20,6 +22,8 @@ class SXLaunchModelDB: Object, NSCopying {
   let staticFireDateUnix = RealmOptional<Double>()
   let payloads = List<String>()
   
+  // MARK: - Initialization
+  //
   convenience init(id: Int = Int.random(in: 0...100000),
                    launchID: String = "\(Int.random(in: 0...100000))",
                    name: String = "",
@@ -41,7 +45,8 @@ class SXLaunchModelDB: Object, NSCopying {
   override class func primaryKey() -> String? {
       return "id"
   }
- 
+  // MARK: - NSCopying
+  //
   func copy(with zone: NSZone? = nil) -> Any {
     
     return SXLaunchModelDB(id: id,

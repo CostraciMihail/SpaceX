@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Mock struct which contain different mocks of models.
 struct SXMock {
   
   static let wikipediaUrl = "https://en.wikipedia.org/wiki/Starlink"
