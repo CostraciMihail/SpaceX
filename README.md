@@ -18,8 +18,6 @@ User can add/remove from 'favorites' list a launch. Favorites list is save in lo
 ## Frameworks used:
 - UIKit;
 - SwiftUI;
-- Storyboard;
-- Xib;
 - Realm DB;
 - Combine;
 - Kingfisher;
