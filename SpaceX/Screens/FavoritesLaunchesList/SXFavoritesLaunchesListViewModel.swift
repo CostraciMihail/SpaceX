@@ -67,6 +67,7 @@ class SXFavoritesLaunchesListViewModel: SXFavoritesLaunchesListViewModelInterfac
   
   func clearBindings() {
     cancellables.forEach { $0.cancel() }
+    cancellables.removeAll()
   }
   
   // MARK: - Deinit
@@ -74,6 +75,7 @@ class SXFavoritesLaunchesListViewModel: SXFavoritesLaunchesListViewModelInterfac
   deinit {
     clearBindings()
     realmNotificationToken?.invalidate()
+    realmNotificationToken = nil
     
     #if DEBUG
     print("\(self) was deinited")
