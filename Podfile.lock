@@ -7,11 +7,25 @@ PODS:
   - Realm/Headers (5.0.1)
   - RealmSwift (5.0.1):
     - Realm (= 5.0.1)
+  - RxBlocking (6.1.0):
+    - RxSwift (= 6.1.0)
+  - RxCocoa (6.1.0):
+    - RxRelay (= 6.1.0)
+    - RxSwift (= 6.1.0)
+  - RxRelay (6.1.0):
+    - RxSwift (= 6.1.0)
+  - RxSwift (6.1.0)
+  - RxTest (6.1.0):
+    - RxSwift (= 6.1.0)
   - youtube-ios-player-helper (1.0.2)
 
 DEPENDENCIES:
   - Kingfisher/SwiftUI (~> 5.0)
   - RealmSwift
+  - RxBlocking (= 6.1.0)
+  - RxCocoa (= 6.1.0)
+  - RxSwift (= 6.1.0)
+  - RxTest (= 6.1.0)
   - youtube-ios-player-helper (~> 1.0.2)
 
 SPEC REPOS:
@@ -19,14 +33,24 @@ SPEC REPOS:
     - Kingfisher
     - Realm
     - RealmSwift
+    - RxBlocking
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - RxTest
     - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   Realm: d36cfc336d76d2e15b13651beb6050f49354de4b
   RealmSwift: f29ae0ceaf4fbaf4803c40bbebd838ea2beb903a
+  RxBlocking: 602095fba0bce7b16b56ccec89edf780c248b7d9
+  RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
+  RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
+  RxTest: 9d26616eaff4a7e75f4ecae9b2c24840f2e8218d
   youtube-ios-player-helper: 40b96e52c22445f0fdc43731cefa32c67075ff81
 
-PODFILE CHECKSUM: 3583f9dc2c04ff39d4a8122e9a7743c8e2f0f759
+PODFILE CHECKSUM: 07a488d53963a5df449c012cc33da03b61cd7d81
 
 COCOAPODS: 1.10.1

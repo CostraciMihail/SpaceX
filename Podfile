@@ -8,10 +8,15 @@ target 'SpaceX' do
   pod 'Kingfisher/SwiftUI', '~> 5.0'
   pod "youtube-ios-player-helper", "~> 1.0.2"
   pod 'RealmSwift'
+  
+  pod 'RxSwift', '6.1.0'
+  pod 'RxCocoa', '6.1.0'
 
   target 'SpaceXTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxBlocking', '6.1.0'
+    pod 'RxTest', '6.1.0'
   end
 
   target 'SpaceXUITests' do
