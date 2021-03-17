@@ -1,21 +1,24 @@
-name: Swift
+name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
   pull_request:
-    branches: [ master ]
+    branches: [ develop ]
   schedule:
   - cron: "0 9 * * 1-5"
-  
+
 jobs:
-  build:
-
+  test:
+    name: UnitTests
     runs-on: macos-latest
-
+    strategy:
+      matrix:
+        destination: ['platform=iOS Simulator,OS=14.4,name=iPhone 11 Pro']
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+      - name: Checkout
+        uses: actions/checkout@develop
+      - name: Testing
+        run: |
+          cd SpaceX
+          xcodebuild clean test -project SpaceX.xcworkspace -scheme SpaceX
