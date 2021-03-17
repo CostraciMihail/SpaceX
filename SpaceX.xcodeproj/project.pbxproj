@@ -41,6 +41,8 @@
 		73CF0FE82573C14900EB7386 /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0FE72573C14900EB7386 /* Date+Formatter.swift */; };
 		73CF0FED2573C6B100EB7386 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0FEC2573C6B100EB7386 /* UIColor+Extensions.swift */; };
 		73CF0FF22573F16300EB7386 /* SXStoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0FF12573F16300EB7386 /* SXStoryboardInstantiatable.swift */; };
+		7625C1C02602472400D253EF /* SX_Redux_LaunchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7625C1BF2602472400D253EF /* SX_Redux_LaunchListViewController.swift */; };
+		7625C1C5260247D400D253EF /* SX_Redux_LaunchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7625C1C4260247D400D253EF /* SX_Redux_LaunchListViewModel.swift */; };
 		76E60AAD2600EC00008EA736 /* SX_RxLaunchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E60AAC2600EC00008EA736 /* SX_RxLaunchListViewController.swift */; };
 		76E60AB22600EC17008EA736 /* SX_RxLaunchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E60AB12600EC17008EA736 /* SX_RxLaunchListViewModel.swift */; };
 		76E60ABE2600ECAE008EA736 /* SX_RxSXLaunchesAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E60ABD2600ECAE008EA736 /* SX_RxSXLaunchesAPIService.swift */; };
@@ -110,6 +112,8 @@
 		73CF0FE72573C14900EB7386 /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
 		73CF0FEC2573C6B100EB7386 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		73CF0FF12573F16300EB7386 /* SXStoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXStoryboardInstantiatable.swift; sourceTree = "<group>"; };
+		7625C1BF2602472400D253EF /* SX_Redux_LaunchListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SX_Redux_LaunchListViewController.swift; sourceTree = "<group>"; };
+		7625C1C4260247D400D253EF /* SX_Redux_LaunchListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SX_Redux_LaunchListViewModel.swift; sourceTree = "<group>"; };
 		76E60AAC2600EC00008EA736 /* SX_RxLaunchListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SX_RxLaunchListViewController.swift; sourceTree = "<group>"; };
 		76E60AB12600EC17008EA736 /* SX_RxLaunchListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SX_RxLaunchListViewModel.swift; sourceTree = "<group>"; };
 		76E60ABD2600ECAE008EA736 /* SX_RxSXLaunchesAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SX_RxSXLaunchesAPIService.swift; sourceTree = "<group>"; };
@@ -272,7 +276,8 @@
 		73CF0F892572B6CA00EB7386 /* LaunchList */ = {
 			isa = PBXGroup;
 			children = (
-				76E60AB62600EC2A008EA736 /* Rx */,
+				7625C1BB260246F000D253EF /* MVVM-Redux */,
+				76E60AB62600EC2A008EA736 /* MVVM-Rx */,
 				73CF0EF325727E2200EB7386 /* SXLaunchListViewController.swift */,
 				73CF0F7E2572B49100EB7386 /* SXLaunchListViewModel.swift */,
 				73CF0F8B2572B76B00EB7386 /* SXLaunchListRouter.swift */,
@@ -329,13 +334,22 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		76E60AB62600EC2A008EA736 /* Rx */ = {
+		7625C1BB260246F000D253EF /* MVVM-Redux */ = {
+			isa = PBXGroup;
+			children = (
+				7625C1C4260247D400D253EF /* SX_Redux_LaunchListViewModel.swift */,
+				7625C1BF2602472400D253EF /* SX_Redux_LaunchListViewController.swift */,
+			);
+			path = "MVVM-Redux";
+			sourceTree = "<group>";
+		};
+		76E60AB62600EC2A008EA736 /* MVVM-Rx */ = {
 			isa = PBXGroup;
 			children = (
 				76E60AAC2600EC00008EA736 /* SX_RxLaunchListViewController.swift */,
 				76E60AB12600EC17008EA736 /* SX_RxLaunchListViewModel.swift */,
 			);
-			path = Rx;
+			path = "MVVM-Rx";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -615,12 +629,14 @@
 				73CF0FAC2572C24C00EB7386 /* UITableViewCell+Extensions.swift in Sources */,
 				7320CC42257496800091B391 /* SXDatabaseManager.swift in Sources */,
 				7320CBD925743E650091B391 /* SXAppContext.swift in Sources */,
+				7625C1C5260247D400D253EF /* SX_Redux_LaunchListViewModel.swift in Sources */,
 				73CF0F772572AE7B00EB7386 /* SXLaunchDetailsViewController.swift in Sources */,
 				73CF0EF025727E2200EB7386 /* AppDelegate.swift in Sources */,
 				7320CC29257490950091B391 /* SXFavoritesLaunchesListViewModel.swift in Sources */,
 				73CF0EF225727E2200EB7386 /* SceneDelegate.swift in Sources */,
 				7320CC33257495250091B391 /* SXLaunchModelDB.swift in Sources */,
 				7320CBE7257465530091B391 /* SXMock.swift in Sources */,
+				7625C1C02602472400D253EF /* SX_Redux_LaunchListViewController.swift in Sources */,
 				7320CBC025743CE60091B391 /* SXAPIClient.swift in Sources */,
 				73CF0FED2573C6B100EB7386 /* UIColor+Extensions.swift in Sources */,
 				73CF0FE82573C14900EB7386 /* Date+Formatter.swift in Sources */,

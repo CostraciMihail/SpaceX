@@ -33,8 +33,16 @@ User can add/remove from 'favorites' list a launch. Favorites list is save in lo
 
 ---
 
-## Architecture
+## Architectures used
 - MVVM + R.
+
+---
+## MVVM Approaches implemented
+- Combine;
+- RxSwift;
+- Redux.
+
+---
 
 ## Installation
 To be able to run the project on you machine:
