@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ feature/set-up-github-actions ]
   pull_request:
-    branches: [ develop ]
+    branches: [ feature/set-up-github-actions ]
   schedule:
   - cron: "0 9 * * 1-5"
 
@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Installing Pods
-        run: pod install
+        rungit : pod install
       - name: Run Unit Tests
         run: |
           ls -al
