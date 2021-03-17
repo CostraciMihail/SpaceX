@@ -19,10 +19,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Installing Pods
-        uses: pod install
+        run: pod install
       - name: Run Unit Tests
         run: |
-          ls -al 
+          ls -al
           cd SpaceX
           pwd
           ls -al
