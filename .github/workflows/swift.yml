@@ -22,8 +22,7 @@ jobs:
         rungit : pod install
       - name: Run Unit Tests
         run: |
-          ls -al
-          cd SpaceX
-          pwd
-          ls -al
-          # xcodebuild clean test -project SpaceX.xcworkspace -scheme SpaceX
+          # ls -al
+          # pwd
+          # ls -al
+          xcodebuild clean test -project SpaceX.xcworkspace -scheme SpaceX
