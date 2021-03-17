@@ -1,30 +1,21 @@
-name: CI
+name: Swift
 
 on:
   push:
-    branches: [ feature/set-up-github-actions ]
+    branches: [ master ]
   pull_request:
-    branches: [ feature/set-up-github-actions ]
+    branches: [ master ]
   schedule:
   - cron: "0 9 * * 1-5"
-
+  
 jobs:
-  test:
-    name: UnitTests
+  build:
+
     runs-on: macos-latest
-    strategy:
-      matrix:
-        destination: ['platform=iOS Simulator,OS=14.4,name=iPhone 11 Pro']
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Installing Pods
-        run : pod install
-      - name: Run Unit Tests
-        run: |
-          xcodebuild \
-          clean \
-          test -workspace SpaceX.xcworkspace \
-          -scheme SpaceX \
-          -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
+    - uses: actions/checkout@v2
+    - name: Build
+      run: swift build -v
+    - name: Run tests
+      run: swift test -v
