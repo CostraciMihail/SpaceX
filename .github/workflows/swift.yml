@@ -22,7 +22,9 @@ jobs:
         run : pod install
       - name: Run Unit Tests
         run: |
-          # ls -al
-          # pwd
-          # ls -al
-          xcodebuild clean test -project SpaceX.xcworkspace -scheme SpaceX
+          xcodebuild \
+          clean \
+          test -workspace SpaceX.xcworkspace \
+          -scheme SpaceX \
+          -sdk iphonesimulator \
+          -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
