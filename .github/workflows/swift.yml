@@ -18,8 +18,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Testing
+      - name: Installing Pods
+        uses: pod install
+      - name: Run Unit Tests
         run: |
+          ls -al 
           cd SpaceX
-          pod install
-          xcodebuild clean test -project SpaceX.xcworkspace -scheme SpaceX
+          pwd
+          ls -al
+          # xcodebuild clean test -project SpaceX.xcworkspace -scheme SpaceX
