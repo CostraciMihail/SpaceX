@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Installing Pods
-        rungit : pod install
+        run : pod install
       - name: Run Unit Tests
         run: |
           # ls -al
