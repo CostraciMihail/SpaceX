@@ -21,4 +21,5 @@ jobs:
       - name: Testing
         run: |
           cd SpaceX
+          pod install
           xcodebuild clean test -project SpaceX.xcworkspace -scheme SpaceX
