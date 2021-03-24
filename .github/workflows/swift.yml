@@ -2,11 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ master ]
   pull_request:
     branches: [ master, develop ]
-  schedule:
-  - cron: "0 9 * * 1-5"
 
 jobs:
   test:
@@ -28,4 +26,3 @@ jobs:
           -scheme SpaceX \
           -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
-
