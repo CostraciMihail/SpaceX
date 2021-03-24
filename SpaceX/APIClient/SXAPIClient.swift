@@ -15,8 +15,12 @@ struct SXAPIClientResponse<T> {
   let response: URLResponse
 }
 
+protocol SXAPIClientInterface {
+  func run<T: Decodable>(_ request: URLRequest, _ decoder: JSONDecoder) -> AnyPublisher<SXAPIClientResponse<T>, SXError>
+}
+
 /// SXAPIClient responsable for making request
-struct SXAPIClient: SXErrorReponse {
+struct SXAPIClient: SXAPIClientInterface, SXErrorReponse {
   
   func run<T: Decodable>(_ request: URLRequest, _ decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<SXAPIClientResponse<T>, SXError> {
     

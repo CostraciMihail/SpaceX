@@ -51,6 +51,10 @@ extension SXEndpointProtocol {
     URL(string: "https://api.spacexdata.com/v4")!
   }
   
+  var fullURL: URL {
+    URL(string: baseURL.absoluteString + self.path)!
+  }
+  
   var headers: SXHTTPHeaders? {
     ["Content-Type" : "application/json"]
   }

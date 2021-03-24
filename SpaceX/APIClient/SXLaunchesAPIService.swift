@@ -18,7 +18,11 @@ protocol SXLaunchesAPIServiceInterface {
 /// SXLaunchesAPIService
 class SXLaunchesAPIService: SXLaunchesAPIServiceInterface {
   
-  var client = SXAPIClient()
+  var client: SXAPIClientInterface
+  
+  init(client: SXAPIClientInterface = SXAPIClient()) {
+    self.client = client
+  }
   
   /// Loading all past list of launches 
   /// - Returns: publisher with decoded data from JSON
@@ -26,7 +30,7 @@ class SXLaunchesAPIService: SXLaunchesAPIServiceInterface {
     
     let service = SXLaunchesEndpoint.getAllPastLaunches
     let request = URLRequest(service: service)
-    return client.run(request)
+    return client.run(request, JSONDecoder())
       .map(\.value)
       .eraseToAnyPublisher()
   }
