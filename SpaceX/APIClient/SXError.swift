@@ -77,9 +77,12 @@ enum SXErrorKeys: Int, CaseIterable {
   
   case URL_ERROR
   case UNKNOWN_ERROR
+  case FAIL_LOADING_LOCAL_JSON_FILE
+  case MOCK_RESPONSE_IS_NOT_SETTED
   case NO_INTERNET_CONNECTION = -1009
   case REQUEST_TIMED_OUT = -1001
   case NO_VALUE_OR_BODY_IS_EMPTY = 3840
+
   
   /// The response class representation of status codes, these get grouped by their first digit.
   enum ResponseType {
@@ -184,8 +187,7 @@ enum SXErrorKeys: Int, CaseIterable {
   //
   // Client Error - 4xx
   //
-  
-  
+
   /// - badRequest: The server cannot or will not process the request due to an apparent client error.
   case badRequest = 400
   
